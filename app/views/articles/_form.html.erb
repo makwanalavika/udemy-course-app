@@ -1,0 +1,17 @@
+<div class="article_form">
+  <%= form_for @article do |form| %>
+
+   <%= form.label :title %>
+
+  <p class="input_area">
+   <%= form.text_field :title, placeholder: 'title' %>
+  </p>
+
+   <%= form.label :description %>
+
+  <p class="input_area">
+   <%= form.text_area :description, placeholder: 'description' %>
+  </p>
+  <%= form.submit %>
+  <% end %>
+</div>

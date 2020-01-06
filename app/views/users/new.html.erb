@@ -1,0 +1,21 @@
+<div class="user_form">
+  <%= form_for @user do |form| %>
+
+   <%= form.label :username %>
+
+  <p class="input_area">
+   <%= form.text_field :username, placeholder: 'Your name' %>
+  </p>
+
+   <%= form.label :email %>
+
+  <p class="input_area">
+   <%= form.text_field :email, placeholder: 'Your email', class: 'form_control' %>
+  </p>
+  <%= form.label :password %>
+  <p class="input_area">
+    <%= form.password_field :password, placeholder: 'create a strong password'%>
+  </p>
+  <%= form.submit %>
+  <% end %>
+</div>

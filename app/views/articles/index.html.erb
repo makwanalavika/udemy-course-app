@@ -1,0 +1,16 @@
+<%= link_to 'show user', user_path(User.first) %>
+<%= flash[:message] %><br><br>
+<%= link_to 'Add new Article', new_article_path %>
+<div>
+  <table>
+    <tr><th>Title</th><th>Description</th></tr>
+    <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.description %></td>
+      <td><%= link_to 'edit', edit_article_path(article) %>
+      <td><%= link_to 'delete', article_path(article), method: :delete , data: "Are you sure" %>
+    </tr>
+    <% end %>
+  </table>
+</div>
