@@ -2,6 +2,9 @@ li.nav-item{
   list-style-type: none;
   margin: 10px;
 }
+.form-control{
+  width: 50%;
+}
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
