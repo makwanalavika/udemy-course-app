@@ -1,8 +1,8 @@
-<div class="content">
+<div class="content messages_index">
   <% @messages.each do |message| %>
-  <div class="summary">
-     <p><%= message.user.username.capitalize %>: added  :<%= message.body %> </p>
-     <!-- <a>Elliot Fu</a> added <a>Jenny Hess</a> Text Message -->
-  </div>
+    <div class="summary">
+      <p class="db_message"></p>
+      <p id="new_message_<%= message.id %>"><%= message.user.username.capitalize %>: added  :<%= message.body %></p>
+   </div>
   <% end %>
 </div>

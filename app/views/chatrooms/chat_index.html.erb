@@ -12,14 +12,14 @@
         </div>
       </div>
       <div class="extra content">
-        <form class="ui reply form">
+        <%= form_for @message, class: "ui reply form",  remote: true do |f| %>
           <div class="field">
             <div class="ui fluid icon input">
-              <input type="text" placeholder="Enter a message...">
+              <%= f.text_field :body, placeholder:"Enter a message...", id: 'send_message' %>
               <i class="bordered inverted blue edit icon"></i>
             </div>
           </div>
-        </form>
+        <% end %>
       </div>
     </div>
   </div>
@@ -42,3 +42,17 @@
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  jQuery('#send_message').keypress(function(e) {
+    if (e.keyCode == 13 && !e.shiftKey) {
+        e.preventDefault();
+        jQuery.ajax({
+            type:'POST',
+            url: 'messages',
+            data: {message: this.value},
+            success: {},
+
+        });
+    }
+});
+</script>

@@ -1,0 +1,2 @@
+$(".messages_index").append("<%= escape_javascript(render partial: 'new_message', locals: { message: @message } ) %>");
+$('#send_message').val("");
