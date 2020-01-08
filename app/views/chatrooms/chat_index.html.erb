@@ -1,32 +1,29 @@
-<h2 class="ui center aligned medium icon header">
-  <i class="circular blue meetup icon"><h3>Say Something</h3></i>
-</h2>
+<h4 class="ui center aligned medium icon header">
+  <i class="circular blue meetup icon"></i>
+  Say Something
+</h4>
+
 <div class="ui two column grid">
   <div class="twelve wide column">
     <div class="ui fluid raised card chatbox">
-      <div class="content ">
-        <div class="ui medium feed ">
-          <h4 class="ui header">Yours chats</h4>
-          <div class="event">
-            <%= render 'messages/message' %>
-          </div>
+      <div class="content">
+        <div class="ui feed">
+          <%= render 'messages/message' %>
         </div>
       </div>
       <div class="extra content">
         <form class="ui reply form">
           <div class="field">
-            <div class="ui fluid icon button">
-              <i class="bordered inverted orange edit icon"></i>
-                <input type="text" placeholder="Enter message...">
-              <div class="ui left icon input">
-                <i class="users icon"></i>
-            </div>
+            <div class="ui fluid icon input">
+              <input type="text" placeholder="Enter a message...">
+              <i class="bordered inverted blue edit icon"></i>
             </div>
           </div>
         </form>
       </div>
     </div>
   </div>
+
   <div class="four wide column">
     <div class="ui fluid raised card chatbox">
       <div class="content">
