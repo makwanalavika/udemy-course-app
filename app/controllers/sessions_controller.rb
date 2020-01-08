@@ -6,8 +6,11 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
       flash[:success] = 'successfully logged in'
-      redirect_to users_path
+      redirect_to :controller => 'chatrooms', :action => 'chat_index'
+
+      #redirect_to users_path
     else
+      flash.now[:error] = 'There was something wrong with your login information'
       render 'new'
     end
   end
@@ -15,6 +18,6 @@ class SessionsController < ApplicationController
   def destroy
     session[:user_id] = nil
     flash[:success] = 'successfully logged out'
-    redirect_to articles_path
+    redirect_to new_path
   end
 end

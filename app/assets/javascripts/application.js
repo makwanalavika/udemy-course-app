@@ -12,6 +12,13 @@
 //
 //= require rails-ujs
 //= require bootstrap-sprockets
+//= require jquery
+//= require semantic-ui
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function()
+{
+  $('.ui.dropdown').dropdown();
+})

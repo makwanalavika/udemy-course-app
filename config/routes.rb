@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get 'new' => 'sessions#new'
   post 'create' => 'sessions#create'
   delete 'destroy' => 'sessions#destroy'
+  get 'chat_index' => 'chatrooms#chat_index'
+  resources :messages
 end

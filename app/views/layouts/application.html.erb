@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Udamy Learnings</title>
-
+    <%= favicon_link_tag %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,7 +11,13 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
-    <%= yield %>
+    <% if params[:controller] == 'chatrooms' %>
+      <%= render 'layouts/chatroom_navbar' %>
+    <% else %>
+      <%= render 'layouts/navbar' %>
+    <% end %>
+    <div class= "ui container">
+      <%= yield %>
+    </div>
   </body>
 </html>

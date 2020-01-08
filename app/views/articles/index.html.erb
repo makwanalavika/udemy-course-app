@@ -7,7 +7,7 @@
     <% @articles.each do |article| %>
     <tr>
       <td><%= article.title %></td>
-      <td><%= article.description %></td>
+      <td class="content"><%= article.description %></td>
       <td><%= link_to 'edit', edit_article_path(article) %>
       <td><%= link_to 'delete', article_path(article), method: :delete , data: "Are you sure" %>
     </tr>
