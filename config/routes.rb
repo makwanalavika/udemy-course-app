@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#home'
   mount ActionCable.server ,at: '/cable'
-
   resources :articles
   resources :users
   resources :messages
@@ -10,6 +9,6 @@ Rails.application.routes.draw do
   get 'new', to: 'sessions#new'
   post 'create', to: 'sessions#create'
   delete 'destroy', to: 'sessions#destroy'
-  get 'chat_index', to: 'chatrooms#chat_index'
-  post 'chat_message', to: 'messages#create'
+  get 'index', to: 'chatrooms#index'
+  post 'message', to: 'messages#create'
 end
