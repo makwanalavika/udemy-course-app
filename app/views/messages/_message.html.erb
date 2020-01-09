@@ -1,15 +1,7 @@
-<div class="content messages_index">
-  <% if @messages.blank? %>
-    <div class="ui label">
-      <i class="mail icon">No message</i>0
+<div class="event">
+  <div class="content">
+    <div class="summary">
+      <em><%= message.user.username %></em>: <%= message.body %>
     </div>
-  <% else %>
-    <% @messages.each do |message| %>
-      <div class="summary">
-        <p class="db_message label"></p>
-          <i class="mail icon"></i>
-        <p id="new_message_<%= message.id %>"> <%= message.user.username.capitalize %>: added  :<%= message.body %></p>
-     </div>
-    <% end %>
-  <% end %>
+  </div>
 </div>

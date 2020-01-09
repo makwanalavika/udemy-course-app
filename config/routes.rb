@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   get 'chat_index' => 'chatrooms#chat_index'
   resources :messages
   post 'chat_message' => 'messages#create'
+  mount ActionCable.server ,at: '/cable'
 end
