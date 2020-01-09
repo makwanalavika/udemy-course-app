@@ -1,14 +1,15 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  get 'about' => 'pages#about'
-  resources :articles
-  get 'signup' => 'users#new'
-  resources :users
-  get 'new' => 'sessions#new'
-  post 'create' => 'sessions#create'
-  delete 'destroy' => 'sessions#destroy'
-  get 'chat_index' => 'chatrooms#chat_index'
-  resources :messages
-  post 'chat_message' => 'messages#create'
   mount ActionCable.server ,at: '/cable'
+
+  resources :articles
+  resources :users
+  resources :messages
+  get 'about', to: 'pages#about'
+  get 'signup', to: 'users#new'
+  get 'new', to: 'sessions#new'
+  post 'create', to: 'sessions#create'
+  delete 'destroy', to: 'sessions#destroy'
+  get 'chat_index', to: 'chatrooms#chat_index'
+  post 'chat_message', to: 'messages#create'
 end

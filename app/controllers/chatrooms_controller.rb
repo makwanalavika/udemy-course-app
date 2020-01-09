@@ -3,6 +3,6 @@ class ChatroomsController < ApplicationController
 
   def chat_index
     @message = Message.new
-    @messages = Message.all
+    @messages = Message.custome_display
   end
 end
