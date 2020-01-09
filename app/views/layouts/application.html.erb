@@ -11,11 +11,7 @@
   </head>
 
   <body>
-    <% if params[:controller] == 'chatrooms' %>
-      <%= render 'layouts/chatroom_navbar' %>
-    <% else %>
-      <%= render 'layouts/navbar' %>
-    <% end %>
+    <%= render 'layouts/navbar' %>
     <div class= "ui container">
       <%= yield %>
     </div>

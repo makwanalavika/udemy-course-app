@@ -1,34 +1,41 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <div class="dropdown">
-          <button class="dropbtn">Select Project</button>
-          <div class="dropdown-content">
-            <%= link_to 'Article app', articles_path %>
-            <%= link_to 'Chat App', new_path %>
-            <a href="#">Link 3</a>
-          </div>
-        </div>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Login", new_path(:some_params => 'text') , class: "nav-link" %>
-
-      </li>
-      <li class="nav-item logout">
-
-      </li>
-    </ul>
-    <%= link_to 'Log out', destroy_path, method: :delete, class: "nav-link logout" %>
-    <!-- <form class="form-inline my-2 my-lg-0 search_bar">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
+<div class="ui tiny inverted menu">
+  <div class="ui floating labeled icon dropdown button">
+  <i class="filter icon"></i>
+  <span class="text">Select App</span>
+  <div class="menu">
+    <div class="divider"></div>
+    <div class="item">
+      <i class="attention icon">
+      <%= link_to 'Article', articles_path %></i>
+    </div>
+    <div class="item">
+      <i class="comment icon"></i>
+      Announcement
+    </div>
+    <div class="item">
+      <i class="meetup icon">
+      <%= link_to 'Chat App', new_path %></i>
+    </div>
   </div>
-</nav>
+</div>
+  <a class="item">
+    Messages
+  </a>
+  <div class="right menu">
+    <div class="ui dropdown item">
+      Account <i class="dropdown icon"></i>
+      <div class="menu container">
+        <% if logged_in? %>
+          <a class="item" ><%= link_to 'Log out', destroy_path, method: :delete %></a>
+        <% else %>
+          <a class="item" ><%= link_to 'Log In' , new_path %></a>
+        <% end %>
+      </div>
+    </div>
+    <% if !logged_in? %>
+    <div class="item">
+      <%= link_to 'Log In' , new_path, class: "ui primary button" %>
+    </div>
+    <% end %>
+  </div>
+</div>
